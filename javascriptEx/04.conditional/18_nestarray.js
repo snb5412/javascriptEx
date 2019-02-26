@@ -10,3 +10,12 @@ for (var i = 0; i < ar.length; i++) {
 	}
 	console.log();
 }
+
+console.log('---------------------------------------');
+
+for (var i in ar) {
+	for(var j in ar[i]){
+		console.log(`ar[${i}][${j}] = ${ar[i][j]}`);
+	}
+	console.log();
+}
