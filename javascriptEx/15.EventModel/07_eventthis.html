@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+<title>Insert title here</title>
+<style>
+	s { ;}
+</style>
+</head>
+<body>
+	<h1 id = "header">클릭</h1>
+	<p id = "para">클릭하세요</p>
+	<p><a id = "link" href = "http://www.naver.com">네이버</a>로 이동</p>
+	
+	<script>
+		function click(){
+			this.innerHTML += "<br>클릭했습니다.";
+		}
+		
+		var header = document.getElementById("header");
+		header.onclick = click;
+		
+		var para = document.getElementById("para");
+		para.onclick = click;
+		
+		var link = document.getElementById("link");
+		link.onclick = function(e){
+			e.preventDefault(); //1) 이벤트 객체를 사용해서 디폴트 이벤트 핸들러 막는방법 
+			alert('클릭');
+			throw "예외발생";
+			return false; //2) return false 사용 디폴트 이벤트 핸들러 막는방법
+		}
+	</script>
+</body>
+</html>
